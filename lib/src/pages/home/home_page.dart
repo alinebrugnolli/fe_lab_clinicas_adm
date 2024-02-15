@@ -1,6 +1,9 @@
+import 'package:fe_lab_clinicas_adm/src/pages/home/home_controller.dart';
 import 'package:fe_lab_clinicas_core/fe_lab_clinicas_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_getit/flutter_getit.dart';
+import 'package:signals_flutter/signals_flutter.dart';
 import 'package:validatorless/validatorless.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,10 +13,22 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with MessageViewMixin {
   final formKey = GlobalKey<FormState>();
   final deskNumberEC = TextEditingController();
+  final controller = Injector.get<HomeController>();
 
+  @override
+  void initState() {
+    messageListener(controller);
+    effect(() {
+      if(controller.informationForm != null) {
+        Navigator.of(context).pushReplacementNamed('/pre-checkin', arguments: controller.informationForm);
+      }
+    });
+    super.initState();
+  }
+ 
   @override
   void dispose() {
     deskNumberEC.dispose();
@@ -69,7 +84,14 @@ class _HomePageState extends State<HomePage> {
                   width: double.infinity,
                   height: 48,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                      final valid = formKey.currentState?.validate() ?? false;
+                      if(valid) {
+                        controller.startService(int.parse(deskNumberEC.text));
+                      }           
+
+                    },
                     child: const Text('CHAMAR PRÓXIMO PACIENTE'),
                   ),
                 ),
