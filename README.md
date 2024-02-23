@@ -20,7 +20,7 @@ Este projeto aborda a criação de um sistema abrangente para um laboratório cl
 
 ## Projeto ADM - Plataforma Desktop
 
-A parte mobile deste projeto é especialmente projetada para otimizar o processo de cadastro de pacientes, oferecendo uma abordagem inovadora e intuitiva por meio do uso de tablets. Essa funcionalidade permite que os próprios pacientes realizem seus cadastros, proporcionando maior autonomia e agilidade no fluxo de atendimento. É composto por:
+A parte desktop deste projeto é dedicada ao guichê de atendimento no laboratório clínico, oferecendo uma solução completa para o gerenciamento eficiente das filas de pacientes, atendimento e validação de exames. É composto por:
 
 - Tela de login
 - Tela para colocar o número do guichê  e chamar próximo paciente.
