@@ -23,6 +23,8 @@ Este projeto aborda a criação de um sistema abrangente para um laboratório cl
 A parte mobile deste projeto é especialmente projetada para otimizar o processo de cadastro de pacientes, oferecendo uma abordagem inovadora e intuitiva por meio do uso de tablets. Essa funcionalidade permite que os próprios pacientes realizem seus cadastros, proporcionando maior autonomia e agilidade no fluxo de atendimento. É composto por:
 
 - Tela de login
-- Tela para colocar o número do guichê de atendimento
-- Tela para finalizar atendimento ou chamar outra senha.
+- Tela para colocar o número do guichê  e chamar próximo paciente.
+- Tela que indica a senha chamada, com possibilidade de chamar outra senha ou atender paciente.
+- Tela para validar imagens exame e finalizar atendimento.
+- Tela para chamar outra senha.
 
